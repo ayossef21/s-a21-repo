@@ -13,7 +13,7 @@ const Caller = () => {
       const response = await fetch(url, {
         mode: 'no-cors' // Set the request's mode to 'no-cors'
       });
-      console.log(url);
+    //   console.log(url);
       const end = performance.now();
       const status = response.status;
       const processingTime = end - start;
