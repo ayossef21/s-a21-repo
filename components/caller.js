@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Caller = () => {
   const [result, setResult] = useState(null);
@@ -24,6 +24,10 @@ const Caller = () => {
     }
   };
 
+  useEffect(() => {
+    handleSendRequests();
+  }, []); // Empty dependency array ensures it's called only once when the component mounts
+
   const handleSendRequests = async () => {
     setResult(null);
     setRequestIndex(null);
@@ -34,7 +38,7 @@ const Caller = () => {
 
   return (
     <div>
-      <button onClick={handleSendRequests}>Hitting target 1,000,000 Stones</button>
+      <button onClick={handleSendRequests} >Hitting target 1,000,000 Stones</button>
       {result && (
         <div>
           <p>Request {requestIndex}</p>
